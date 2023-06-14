@@ -15,7 +15,7 @@ function UserData() {
             nationality: "American"
         },
         {
-            name: "Adewalw",
+            name: "Adewale",
             deparment: "UI/UX",
             nationality: "Dutch"
         },
@@ -35,6 +35,14 @@ function UserData() {
         }
         console.log(updateList);
         setallStudents([...allStudents, updateList]);
+    }
+
+    const deleteStudent = (index)=>{
+        console.log(index);
+        const updatedItems = [...allStudents];
+        updatedItems.splice(index, 1);
+        setallStudents(updatedItems);
+        console.log(updatedItems);
     }
 
     const [studentName, setstudentName] = useState("")
@@ -66,7 +74,7 @@ function UserData() {
                                 <td>{items.deparment}</td>
                                 <td>{items.nationality}</td>
                                 <td>
-                                    <button className='btn btn-success'>Delete</button>
+                                    <button onClick={()=>deleteStudent(i)} className='btn btn-success'>Delete</button>
                                 </td>
                             </tr>
                         ))
