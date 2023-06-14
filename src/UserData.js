@@ -26,7 +26,7 @@ function UserData() {
         }
     ])
 
-    let addStudent = (e)=>{
+    let addStudent = (e) => {
         e.preventDefault();
         let updateList = {
             name: studentName,
@@ -54,16 +54,20 @@ function UserData() {
                         <th>NAME</th>
                         <th>DEPARTMENT</th>
                         <th>NATIONALITY</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         allStudents.map((items, i) => (
                             <tr>
-                                <td>{i+1}</td>
+                                <td>{i + 1}</td>
                                 <td>{items.name}</td>
                                 <td>{items.deparment}</td>
                                 <td>{items.nationality}</td>
+                                <td>
+                                    <button className='btn btn-success'>Delete</button>
+                                </td>
                             </tr>
                         ))
                     }
